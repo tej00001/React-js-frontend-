@@ -1,7 +1,10 @@
-import ExpenseItems from "./components/ExpenseItems";
+//import ExpenseItems from "./components/ExpenseItems";//if we use maps
+// import React from "react"; for react code format
+
+import Expenses from "./components/Expenses";
 
 function App() {
-  const expenses = [
+  const expensesData = [
     {
       id: "el",
       name: "Food",
@@ -37,17 +40,19 @@ function App() {
       date: new Date(2022, 6, 12),
       LocationOfExpenditure: "bangkok",
     },
-    
   ];
- 
+
   return (
     <div>
       <h1>let's start</h1>
       <h2>ExpenseItems Details</h2>
-      {expenses.map((any) => (
-        <ExpenseItems data={any}></ExpenseItems>
-      ))}
+      {/* {expenses.map((any) => (
+         <ExpenseItems data={any}></ExpenseItems>
+       ))} */}
+      <Expenses expenses={expensesData} />
     </div>
+    // return React.createElement('div',{},
+    //  React.createElement(Expenses,{expenses:expensesData}));//reactcode format above expression
   );
 }
 
